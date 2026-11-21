@@ -1,0 +1,18 @@
+{
+  "name": "typecriptbeginer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright and Cucumber TypeScript practice project",
+  "scripts": {
+    "test:cucumber": "cucumber-js",
+    "test:cucumber:angular": "cucumber-js --name \"Submit valid practice details\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
