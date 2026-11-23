@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 export class PracticeShopPage {
   constructor(private readonly page: Page) {}
@@ -42,15 +42,7 @@ export class PracticeShopPage {
     await this.page.locator('#country').fill(location);
   }
 
-  async acceptTermsAndPurchase() {
-    const checkbox = await this.page.locator("//*[contains(text(),'I agree with the ')]")
-    await checkbox.check();
-
-    expect(await checkbox).toBeChecked();
-    await this.page.locator("//button[@class='btn btn-info']").click()
-
-
-    
+  async clickPurchase(): Promise<void> {
     await this.page.getByRole('button', { name: 'Purchase' }).click();
-}
+  }
 }

@@ -3,6 +3,5 @@ Feature: Practice shop checkout
     Given I log in to the practice shop
     When I view the available products and add "Blackberry" to the cart
     Then the cart should contain "Blackberry"
-    When I proceed to checkout and enter "India" as the delivery location
-    And I accept the terms and purchase
-    Then I should see the order confirmation
+    When I enter "India" as the delivery location and click on purchase
+    Then I should see the success message "Success! Thank you! Your order will be delivered in next few weeks :-)."
