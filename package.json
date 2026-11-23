@@ -6,7 +6,7 @@
   "scripts": {
     "test:cucumber": "cucumber-js",
     "test:cucumber:angular": "cucumber-js --name \"Submit valid practice details\"",
-    "test:cucumber:checkout": "cucumber-js --name \"Purchase Blackberry from the practice shop\"",
+    "test:cucumber:checkout": "cucumber-js --name \"Purchase Blackberry from the practice shop\" --format progress --format html:reports/checkout-report.html",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
