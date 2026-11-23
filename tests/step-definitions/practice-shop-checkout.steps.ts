@@ -28,14 +28,15 @@ Then('the cart should contain {string}', async (productName: string) => {
   expect(await practiceShopPage.getCartItemCount(productName)).toBe(1);
 });
 
-When(/^I proceed to checkout and enter "India" as the delivery location$/, async () => {
-  await practiceShopPage.enterDeliveryLocation('India');
+When(
+  'I enter {string} as the delivery location and click on purchase',
+  async (location: string) => {
+    await practiceShopPage.enterDeliveryLocation(location);
+    await practiceShopPage.clickPurchase();
+  },
+);
+
+Then('I should see the success message {string}', async (message: string) => {
+  await expect(page.locator('.alert-success')).toContainText(message);
 });
 
-When('I accept the terms and purchase', async () => {
-  await practiceShopPage.acceptTermsAndPurchase();
-});
-
-Then('I should see the order confirmation', async () => {
-  await expect(page.getByText(/Success! Thank you!/i)).toBeVisible();
-});
